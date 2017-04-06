@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
-import { EmailValidator } from '../../validators/email';
+import { EmailValidator } from '../../app/validators/email-validator';
 
 /*
   Generated class for the ResetPassword page.

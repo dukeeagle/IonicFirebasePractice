@@ -20,6 +20,14 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     this.zone = new NgZone({});
+    firebase.initializeApp({
+      apiKey: "AIzaSyDjWHo4EAJoaOaR9XlO9ElsZICVoJ0_Fsg",
+      authDomain: "eventtutorial-2cfcc.firebaseapp.com",
+      databaseURL: "https://eventtutorial-2cfcc.firebaseio.com",
+      projectId: "eventtutorial-2cfcc",
+      storageBucket: "eventtutorial-2cfcc.appspot.com",
+      messagingSenderId: "41936784347"
+    });
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       this.zone.run( () => {
         if (!user) {
@@ -30,14 +38,6 @@ export class MyApp {
           unsubscribe();
         }
       });
-    });
-    firebase.initializeApp({
-      apiKey: "AIzaSyDjWHo4EAJoaOaR9XlO9ElsZICVoJ0_Fsg",
-      authDomain: "eventtutorial-2cfcc.firebaseapp.com",
-      databaseURL: "https://eventtutorial-2cfcc.firebaseio.com",
-      projectId: "eventtutorial-2cfcc",
-      storageBucket: "eventtutorial-2cfcc.appspot.com",
-      messagingSenderId: "41936784347"
     });
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
