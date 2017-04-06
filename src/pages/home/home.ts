@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { LoginPage } from '../login/login';
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   selector: 'page-home',
@@ -14,9 +15,13 @@ export class HomePage {
 
   }
 
-  logOut(){
+  /*logOut(){
     this.authData.logoutUser().then(() => {
       this.navCtrl.setRoot(LoginPage);
-    });
+    });*/
+
+  goToProfile(){
+    this.navCtrl.push(ProfilePage);
   }
-}
+
+  }
