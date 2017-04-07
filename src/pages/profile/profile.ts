@@ -41,12 +41,12 @@ export class ProfilePage {
       message: "Your first name & last name",
       inputs: [
         {
-          name: 'firstname',
+          name: 'firstName',
           placeholder: 'Your first name',
           value: this.userProfile.firstName
         },
         {
-          name: 'lastname',
+          name: 'lastName',
           placeholder: 'Your last name',
           value: this.userProfile.lastName
         },

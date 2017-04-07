@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { EventData } from '../../providers/event-data';
 /*
   Generated class for the EventCreate page.
 
@@ -13,8 +13,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class EventCreatePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public eventData: EventData) {}
 
+  createEvent(eventName: string, eventDate: string, eventPrice: number, eventCost: number): void {
+    this.eventData.createEvent(eventName, eventDate, eventPrice, eventCost).then( () => {
+      this.navCtrl.pop();
+    });
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventCreatePage');
   }
