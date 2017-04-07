@@ -12,6 +12,7 @@
 
 
 <ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let event of eventList" (click)="goToEventDetail(event.id)">
       <h2>{{event?.name}}</h2>
