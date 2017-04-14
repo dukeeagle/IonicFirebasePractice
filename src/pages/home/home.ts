@@ -13,7 +13,7 @@ import { EventListPage } from '../event-list/event-list';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  rootPage:any = EventListPage;
   constructor(public navCtrl: NavController, public authData: AuthData) {
 
   }
@@ -29,6 +29,7 @@ export class HomePage {
 
   goToCreate(){
     this.navCtrl.push(EventCreatePage);
+    //this.navCtrl.setRoot(EventCreatePage);
   }
 
   goToList(){
